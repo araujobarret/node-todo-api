@@ -7,7 +7,7 @@ let {Todo} = require('./models/todo');
 let {User} = require('./models/user');
 
 let app = express();
-const port = proccess.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -54,6 +54,6 @@ app.get('/todos/:id', (req, res) => {
 	}).catch((e) => res.status(400).send());	
 });
 
-app.listen(port, () => console.log('Listening on port ${port}...'));
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 module.exports = {app};
