@@ -7,6 +7,7 @@ let {Todo} = require('./models/todo');
 let {User} = require('./models/user');
 
 let app = express();
+const port = proccess.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -22,19 +23,6 @@ app.post('/todos', (req, res) => {
 	});
 
 });
-
-// app.post('/users', (req, res) => {
-// 	var user = new User({
-// 		email: req.body.email
-// 	});
-	
-// 	user.save().then((doc) => {
-// 		res.send(doc);
-// 	}, (e) => {
-// 		res.status(400).send(e);
-// 	});
-
-// });
 
 app.get('/todos', (req, res) => {
 	Todo.find().then((doc) => {
@@ -66,6 +54,6 @@ app.get('/todos/:id', (req, res) => {
 	}).catch((e) => res.status(400).send());	
 });
 
-app.listen(3000, () => console.log('Listening on port 3000...'));
+app.listen(port, () => console.log('Listening on port ${port}...'));
 
 module.exports = {app};
