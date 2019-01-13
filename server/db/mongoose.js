@@ -8,7 +8,7 @@ let options = {
 // mLab connection
 let todoUser = process.env.TODO_USER;
 let todoPassword = process.env.TODO_PASSWORD;
-let mLabUri = `mongodb://${todoUser'}:${todoPassword}@ds023523.mlab.com:23523/todoapp5523`;
+let mLabUri = `mongodb://${todoUser}:${todoPassword}@ds023523.mlab.com:23523/todoapp5523`;
 
 mongoose.set('debug', true)
 mongoose.Promise = global.Promise;
