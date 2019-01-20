@@ -48,7 +48,7 @@ userSchema.methods.generateAuthToken = function() {
 		access
 	}, 'abc123').toString();
 
-	user.tokens.push({access, token});
+	user.tokens.concat([{access, token}]);
 	return user.save().then(() => {
 		return token;
 	});
